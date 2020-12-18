@@ -25,8 +25,8 @@ export default function (Glide, Components, Events) {
      * @param {String} pattern
      * @returns {String}
      */
-    resolve (pattern) {
-      let token = pattern.slice(0, 1)
+    resolve (pattern = "") {
+      let token = pattern && pattern.slice(0, 1)
 
       if (this.is('rtl')) {
         return pattern.split(token).join(FLIPED_MOVEMENTS[token])

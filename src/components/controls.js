@@ -228,8 +228,9 @@ export default function (Glide, Components, Events) {
         event.preventDefault()
       }
 
-      const direction = event.currentTarget.getAttribute('data-glide-dir')
+      const direction = event.currentTarget && event.currentTarget.getAttribute('data-glide-dir')
 
+      if(direction)
       Components.Run.make(Components.Direction.resolve(direction))
     }
   }
